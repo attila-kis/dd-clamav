@@ -37,7 +37,7 @@ class Ddclamav < Formula
     args = std_cmake_args + %W[
       -DAPP_CONFIG_DIRECTORY=#{etc}/clamav
       -DDATABASE_DIRECTORY=#{var}/lib/clamav
-      -DENABLE_JSON_SHARED=ON
+      -DENABLE_JSON_SHARED=OFF
       -DENABLE_STATIC_LIB=ON
       -DENABLE_SHARED_LIB=OFF
       -DENABLE_EXAMPLES=OFF
