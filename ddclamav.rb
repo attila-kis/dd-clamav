@@ -13,16 +13,6 @@ class Ddclamav < Formula
     regex(/href=.*?clamav[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  bottle do
-    sha256 arm64_ventura:  "ac8c49781f54919c239b5fbd1d25f5c9c5f4df9f50f9708a9180a75e8fbd276b"
-    sha256 arm64_monterey: "17bdce90d972244e322899200109657442978e7c25df8e8b2d9d30981a9dde20"
-    sha256 arm64_big_sur:  "bf78ede987750a3c358a28fc33a882b4285eb133d821c712ecf00d2bd7fc5095"
-    sha256 monterey:       "7f7207e5a902289cbce8f898226ee64ac630c1ad6000139fa45c78fbd25be2d8"
-    sha256 big_sur:        "8405dde8059d027a82fc49aa5fa03570c18496d81a3c0dc0788f8fe7d600c3a6"
-    sha256 catalina:       "8b671db52fb8eee93e031f7fa4b787fd3deda60a05235689aefd0eb54346d778"
-    sha256 x86_64_linux:   "56ae6a3c76325a8585125f79c63bb37473bdadb5592fe24d06b0abe03c60977c"
-  end
-
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "rust" => :build
@@ -49,7 +39,7 @@ class Ddclamav < Formula
       -DDATABASE_DIRECTORY=#{var}/lib/clamav
       -DENABLE_JSON_SHARED=ON
       -DENABLE_STATIC_LIB=ON
-      -DENABLE_SHARED_LIB=ON
+      -DENABLE_SHARED_LIB=OFF
       -DENABLE_EXAMPLES=OFF
       -DENABLE_TESTS=OFF
       -DENABLE_MILTER=OFF
